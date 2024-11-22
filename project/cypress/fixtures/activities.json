@@ -1,0 +1,22 @@
+{
+  "activities": [
+    {
+      "id": 1,
+      "title": "Desert Safari Adventure",
+      "description": "Experience the thrill of dune bashing",
+      "price": 99,
+      "rating": 4.8,
+      "reviewCount": 128,
+      "images": ["https://example.com/desert-safari.jpg"]
+    },
+    {
+      "id": 2,
+      "title": "City Walking Tour",
+      "description": "Explore the historic city center",
+      "price": 29,
+      "rating": 4.6,
+      "reviewCount": 85,
+      "images": ["https://example.com/city-tour.jpg"]
+    }
+  ]
+}

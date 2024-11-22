@@ -1,0 +1,23 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Admin access
+    match /{allPaths=**} {
+      allow read, write: if request.auth != null && 
+        request.auth.token.email == 'framework.ma@gmail.com';
+    }
+    
+    // Activity images
+    match /activities/{activityId}/{imageId} {
+      allow read: if true;
+      allow write: if request.auth != null && 
+        (request.auth.token.provider == true || request.auth.token.admin == true);
+    }
+    
+    // User profile images
+    match /users/{userId}/{imageId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}

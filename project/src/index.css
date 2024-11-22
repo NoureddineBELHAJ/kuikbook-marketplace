@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default theme colors */
+  --primary-color: #7C7F86; /* Nardo Grey for public space */
+  --theme-color: #7C7F86;
+  
+  /* Role-specific colors */
+  --admin-color: #40C5C5;
+  --provider-color: #003580;
+  --traveler-color: #FF9900;
+}
+
+@layer base {
+  html {
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5;
+    background-color: var(--primary-color);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md bg-white px-4 py-2.5 text-sm font-semibold shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5;
+    color: var(--theme-color);
+  }
+
+  .footer {
+    @apply bg-[#7C7F86] text-white;
+  }
+
+  .footer-link {
+    @apply text-gray-100 hover:text-white transition-colors duration-200;
+  }
+
+  .footer-heading {
+    @apply text-white font-semibold;
+  }
+
+  /* Role-specific footer styles */
+  .footer-admin {
+    @apply bg-admin-600 text-white;
+  }
+
+  .footer-provider {
+    @apply bg-provider-600 text-white;
+  }
+
+  .footer-traveler {
+    @apply bg-traveler-600 text-white;
+  }
+
+  .input {
+    @apply block w-full rounded-md border-0 py-3 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6;
+  }
+
+  .input:focus {
+    @apply ring-2 ring-inset;
+    --tw-ring-color: var(--theme-color);
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-200;
+  }
+
+  .nav-link {
+    @apply transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:transform after:scale-x-0 after:transition-transform after:duration-200 hover:after:scale-x-100;
+    color: var(--theme-color);
+  }
+
+  .nav-link:after {
+    background-color: var(--theme-color);
+  }
+}
+
+/* Role-specific theme classes */
+.theme-admin {
+  --primary-color: var(--admin-color);
+  --theme-color: var(--admin-color);
+}
+
+.theme-provider {
+  --primary-color: var(--provider-color);
+  --theme-color: var(--provider-color);
+}
+
+.theme-traveler {
+  --primary-color: var(--traveler-color);
+  --theme-color: var(--traveler-color);
+}
+
+.animate-enter {
+  animation: enter 0.2s ease-out;
+}
+
+@keyframes enter {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

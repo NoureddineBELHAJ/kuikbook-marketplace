@@ -1,0 +1,20 @@
+{
+  "bookings": [
+    {
+      "id": 1,
+      "activityId": 1,
+      "date": "2023-12-15",
+      "status": "confirmed",
+      "amount": 99,
+      "participants": 2
+    },
+    {
+      "id": 2,
+      "activityId": 2,
+      "date": "2023-12-16",
+      "status": "pending",
+      "amount": 29,
+      "participants": 1
+    }
+  ]
+}
